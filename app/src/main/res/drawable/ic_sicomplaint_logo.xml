@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Outer white circle border -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,8 A52,52 0 1,1 59.99,8 Z" />
+
+    <!-- Green background circle -->
+    <path
+        android:fillColor="#40916C"
+        android:pathData="M60,12 A48,48 0 1,1 59.99,12 Z" />
+
+    <!-- Location pin shape (teardrop) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,26 C50.06,26 42,34.06 42,44 C42,55.5 58,84 60,84 C62,84 78,55.5 78,44 C78,34.06 69.94,26 60,26 Z" />
+
+    <!-- Inner white circle of pin -->
+    <path
+        android:fillColor="#40916C"
+        android:pathData="M60,36 A10,10 0 1,1 59.99,36 Z" />
+
+    <!-- White checkmark inside pin circle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M54.5,44.5 L58,48 L66,40" />
+
+</vector>

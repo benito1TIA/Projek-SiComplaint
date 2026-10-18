@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/background_light">
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Buat Laporan" android:textSize="23sp" android:textStyle="bold" android:textColor="@color/forest_green" android:background="@color/white" android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingTop="20dp" android:paddingBottom="16dp"/>
+ <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bantu kami menjaga fasilitas umum tetap baik." android:textColor="@color/gray_text" android:textSize="14sp" android:layout_marginBottom="16dp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="● Informasi       ● Lokasi       ● Kirim" android:textColor="@color/pine_green" android:textStyle="bold" android:layout_marginBottom="20dp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Foto Kerusakan" android:textStyle="bold" android:textColor="@color/text_dark"/>
+ <Button android:id="@+id/btnAddPhoto" android:layout_width="match_parent" android:layout_height="100dp" android:text="＋ Tambah Foto" android:backgroundTint="@color/very_light_gray" android:textColor="@color/forest_green" android:layout_marginTop="8dp" android:layout_marginBottom="16dp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Kategori Kerusakan" android:textStyle="bold" android:textColor="@color/text_dark"/>
+ <Spinner android:id="@+id/spinnerCategory" android:layout_width="match_parent" android:layout_height="48dp" android:background="@drawable/bg_edittext" android:layout_marginTop="6dp" android:layout_marginBottom="16dp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Deskripsi" android:textStyle="bold" android:textColor="@color/text_dark"/>
+ <EditText android:id="@+id/etDescription" android:layout_width="match_parent" android:layout_height="120dp" android:gravity="top" android:hint="Jelaskan kondisi kerusakan secara detail..." android:inputType="textMultiLine|textCapSentences" android:padding="12dp" android:background="@drawable/bg_edittext" android:layout_marginTop="6dp" android:layout_marginBottom="16dp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Lokasi" android:textStyle="bold" android:textColor="@color/text_dark"/>
+ <EditText android:id="@+id/etLocation" android:layout_width="match_parent" android:layout_height="50dp" android:hint="Masukkan alamat atau lokasi" android:padding="12dp" android:background="@drawable/bg_edittext" android:layout_marginTop="6dp" android:layout_marginBottom="18dp"/>
+ <Button android:id="@+id/btnSubmitReport" android:layout_width="match_parent" android:layout_height="52dp" android:text="Kirim Laporan" android:textColor="@color/white" android:backgroundTint="@color/pine_green"/></LinearLayout></ScrollView>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/white" android:elevation="5dp" android:paddingTop="8dp" android:paddingBottom="8dp">
+  <TextView android:id="@+id/navBeranda" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="⌂
+Beranda" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
+  <TextView android:id="@+id/navPeta" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="◎
+Peta" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
+  <TextView android:id="@+id/navLaporan" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="▤
+Laporan" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
+  <TextView android:id="@+id/navProfil" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="♙
+Profil" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
+ </LinearLayout>
+</LinearLayout>

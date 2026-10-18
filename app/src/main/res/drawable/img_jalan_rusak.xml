@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="200dp"
+    android:viewportWidth="400"
+    android:viewportHeight="200">
+    <path
+        android:fillColor="#3A3D40"
+        android:pathData="M0,0h400v200H0z"/>
+    <path
+        android:fillColor="#F39C12"
+        android:pathData="M185,10h30v30h-30zM185,60h30v30h-30zM185,110h30v30h-30zM185,160h30v30h-30z"/>
+    <!-- Crack / Damage shape -->
+    <path
+        android:fillColor="#1A1A1A"
+        android:pathData="M120,70 l30,40 l-20,30 l50,20 l-40,25 l80,5 l-60,-40 l30,-30 l-40,-20 z"/>
+    <path
+        android:fillColor="#E74C3C"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M200,100 m-25,0 a25,25 0 1,0 50,0 a25,25 0 1,0 -50,0"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M193,87h14v16h-14zM193,109h14v6h-14z"/>
+</vector>

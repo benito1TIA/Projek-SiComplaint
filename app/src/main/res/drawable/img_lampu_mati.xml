@@ -1,0 +1,30 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="200dp"
+    android:viewportWidth="400"
+    android:viewportHeight="200">
+    <path
+        android:fillColor="#1B2631"
+        android:pathData="M0,0h400v200H0z"/>
+    <!-- Pole -->
+    <path
+        android:fillColor="#7F8C8D"
+        android:pathData="M190,40h20v160h-20z"/>
+    <path
+        android:fillColor="#BDC3C7"
+        android:pathData="M160,40h80v15h-80z"/>
+    <!-- Broken Light Head -->
+    <path
+        android:fillColor="#E74C3C"
+        android:pathData="M175,55h50v35h-50z"/>
+    <path
+        android:fillColor="#FADBD8"
+        android:pathData="M185,90h30v10h-30z"/>
+    <!-- Warning symbol -->
+    <path
+        android:fillColor="#F39C12"
+        android:pathData="M200,120 L230,170 L170,170 Z"/>
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M197,138h6v18h-6zM197,160h6v6h-6z"/>
+</vector>

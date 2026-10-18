@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/background_light">
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Laporan Saya" android:textSize="23sp" android:textStyle="bold" android:textColor="@color/forest_green" android:background="@color/white" android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingTop="20dp" android:paddingBottom="16dp"/>
+ <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="14dp">
+ <Button android:id="@+id/btnFilterAll" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Semua" android:backgroundTint="@color/pine_green"/>
+ <Button android:id="@+id/btnFilterProcess" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Diproses" android:backgroundTint="@color/forest_green"/>
+ <Button android:id="@+id/btnFilterDone" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Selesai" android:backgroundTint="@color/forest_green"/>
+ </LinearLayout>
+ <LinearLayout android:id="@+id/reportList" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical"/></LinearLayout></ScrollView>
+ <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/white" android:elevation="5dp" android:paddingTop="8dp" android:paddingBottom="8dp">
+  <TextView android:id="@+id/navBeranda" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="⌂
+Beranda" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
+  <TextView android:id="@+id/navPeta" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="◎
+Peta" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
+  <TextView android:id="@+id/navLaporan" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="▤
+Laporan" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
+  <TextView android:id="@+id/navProfil" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="♙
+Profil" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
+ </LinearLayout>
+</LinearLayout>

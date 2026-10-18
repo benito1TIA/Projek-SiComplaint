@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- SiComplaint Grand Design Color Palette -->
+
+    <!-- Green Family (Primary) -->
+    <color name="forest_green">#2D6A4F</color>
+    <color name="pine_green">#40916C</color>
+    <color name="mint_green">#E8F5EC</color>
+    <color name="dark_green">#1B4332</color>
+
+    <!-- Neutral / Gray Family -->
+    <color name="off_white">#F8F9FA</color>
+    <color name="very_light_gray">#E9ECEF</color>
+    <color name="medium_gray">#ADB5BD</color>
+    <color name="light_gray">#CED4DA</color>
+    <color name="gray_text">#6C757D</color>
+    <color name="dark_grayish">#343A40</color>
+
+    <!-- Accent Colors -->
+    <color name="vivid_blue">#3A86FF</color>
+    <color name="amber">#FFB703</color>
+    <color name="dark_red">#C1121F</color>
+
+    <!-- Base Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="slate">#212529</color>
+
+    <!-- Semantic / Functional -->
+    <color name="primary">@color/pine_green</color>
+    <color name="primary_dark">@color/forest_green</color>
+    <color name="primary_light">@color/mint_green</color>
+    <color name="background_light">@color/off_white</color>
+    <color name="text_dark">@color/dark_grayish</color>
+    <color name="hint_color">@color/medium_gray</color>
+    <color name="card_background">@color/white</color>
+    <color name="border_color">@color/very_light_gray</color>
+
+    <!-- Status Colors -->
+    <color name="status_sent">#40916C</color>
+    <color name="status_verified">#40916C</color>
+    <color name="status_process">#3A86FF</color>
+    <color name="status_done">#40916C</color>
+    <color name="status_rejected">#C1121F</color>
+
+    <!-- Bottom Nav -->
+    <color name="nav_active">@color/pine_green</color>
+    <color name="nav_inactive">@color/medium_gray</color>
+</resources>

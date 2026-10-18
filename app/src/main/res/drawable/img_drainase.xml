@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="200dp"
+    android:viewportWidth="400"
+    android:viewportHeight="200">
+    <path
+        android:fillColor="#1F618D"
+        android:pathData="M0,0h400v200H0z"/>
+    <!-- Water and pipe -->
+    <path
+        android:fillColor="#2980B9"
+        android:pathData="M0,120h400v80H0z"/>
+    <path
+        android:fillColor="#5D6D7E"
+        android:pathData="M140,40h120v90h-120z"/>
+    <path
+        android:fillColor="#34495E"
+        android:pathData="M150,50h100v80h-100z"/>
+    <!-- Clog obstacle -->
+    <path
+        android:fillColor="#795548"
+        android:pathData="M160,80 Q200,60 240,90 Q220,130 170,120 Z"/>
+    <path
+        android:fillColor="#E74C3C"
+        android:pathData="M190,70 L210,110 L170,110 Z"/>
+</vector>

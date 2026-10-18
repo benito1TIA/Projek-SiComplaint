@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">SiComplaint</string>
+
+    <!-- Login -->
+    <string name="welcome_back">Selamat Datang</string>
+    <string name="tagline">Laporkan kerusakan fasilitas\numum di sekitar Anda.</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password…</string>
+    <string name="btn_login">Masuk</string>
+    <string name="btn_google">Masuk dengan Google</string>
+    <string name="btn_apple">Masuk dengan Apple</string>
+    <string name="no_account">Tidak Punya Akun?</string>
+    <string name="register_now">Daftar Sekarang</string>
+    <string name="or_label">Atau</string>
+
+    <!-- Dashboard / Beranda -->
+    <string name="title_dashboard">SiComplaint</string>
+    <string name="subtitle_dashboard">Layanan Pengaduan Masalah Kota</string>
+    <string name="btn_logout">Keluar</string>
+    <string name="lbl_search">Cari laporan, lokasi, atau kategori</string>
+    <string name="lbl_buat_laporan">Buat Laporan</string>
+    <string name="lbl_buat_laporan_sub">Laporkan kerusakan fasilitas umum di sekitar Anda</string>
+    <string name="lbl_kategori">Kategori Laporan</string>
+    <string name="lbl_lihat_semua">Lihat Semua</string>
+    <string name="lbl_laporan_terbaru">Laporan Terbaru</string>
+    <string name="lbl_jalan_rusak">Jalan Rusak</string>
+    <string name="lbl_lampu_jalan">Lampu Jalan</string>
+    <string name="lbl_drainase">Drainase</string>
+    <string name="lbl_fasilitas_taman">Fasilitas Taman</string>
+    <string name="lbl_tempat_sampah">Tempat Sampah</string>
+    <string name="lbl_lainnya">Lainnya</string>
+
+    <!-- Logout Dialog -->
+    <string name="dialog_logout_title">Keluar?</string>
+    <string name="dialog_logout_message">Apakah Anda yakin ingin keluar dari aplikasi SiComplaint?</string>
+    <string name="option_ya">Ya</string>
+    <string name="option_tidak">Tidak</string>
+
+    <!-- Status -->
+    <string name="status_dikirim">Laporan Dikirim</string>
+    <string name="status_diverifikasi">Diverifikasi</string>
+    <string name="status_diproses">Diproses</string>
+    <string name="status_selesai">Selesai</string>
+    <string name="status_ditolak">Ditolak</string>
+
+    <!-- Bottom Nav -->
+    <string name="nav_beranda">Beranda</string>
+    <string name="nav_peta">Peta</string>
+    <string name="nav_laporan">Laporan</string>
+    <string name="nav_profil">Profil</string>
+
+    <!-- Notification badge -->
+    <string name="lbl_hello">Halo,</string>
+</resources>

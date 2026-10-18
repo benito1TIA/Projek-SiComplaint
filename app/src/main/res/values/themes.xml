@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
+    <style name="Base.Theme.Benito_TIA" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/pine_green</item>
+        <item name="colorPrimaryDark">@color/forest_green</item>
+        <item name="colorAccent">@color/mint_green</item>
+        <item name="android:statusBarColor">@color/pine_green</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+
+    <style name="Theme.Benito_TIA" parent="Base.Theme.Benito_TIA" />
+
+    <!-- Splash Screen Theme (fullscreen, green status bar) -->
+    <style name="Theme.Benito_TIA.Splash" parent="Base.Theme.Benito_TIA">
+        <item name="android:statusBarColor">@color/pine_green</item>
+        <item name="android:navigationBarColor">@color/pine_green</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+</resources>
