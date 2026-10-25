@@ -1,3 +1,4 @@
+
 package com.example.benito_tia
 
 import android.content.Intent
@@ -11,31 +12,45 @@ class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
 
+    private val splashHandler = Handler(Looper.getMainLooper())
+
+    private val navigateRunnable = Runnable {
+        checkLoginStatus()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Delay 2.5 detik, lalu cek status login
-        Handler(Looper.getMainLooper()).postDelayed({
-            checkLoginStatus()
-        }, 2500)
+        // Tampilkan splash screen selama 2,5 detik
+        splashHandler.postDelayed(navigateRunnable, 2500)
     }
 
     private fun checkLoginStatus() {
-        val sharedPref = getSharedPreferences("SiComplaintPrefs", MODE_PRIVATE)
+        val sharedPref = getSharedPreferences(
+            "SiComplaintPrefs",
+            MODE_PRIVATE
+        )
+
         val isLogin = sharedPref.getBoolean("isLogin", false)
 
         val intent = if (isLogin) {
-            // Sudah login → langsung ke MainActivity
+            // Pengguna sudah login
             Intent(this, MainActivity::class.java)
         } else {
-            // Belum login → ke halaman Login
+            // Pengguna belum login
             Intent(this, LoginActivity::class.java)
         }
 
         startActivity(intent)
         finish()
+    }
+
+    override fun onDestroy() {
+        // Mencegah navigasi tertunda jika Activity dihancurkan
+        splashHandler.removeCallbacks(navigateRunnable)
+        super.onDestroy()
     }
 }

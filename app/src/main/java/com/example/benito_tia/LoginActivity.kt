@@ -70,11 +70,30 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun saveLoginStatus(email: String) {
-        val sharedPref = getSharedPreferences("SiComplaintPrefs", Context.MODE_PRIVATE)
-        with(sharedPref.edit()) {
-            putBoolean("isLogin", true)
-            putString("userEmail", email)
-            apply()
-        }
+        val sharedPref = getSharedPreferences(
+            "SiComplaintPrefs",
+            Context.MODE_PRIVATE
+        )
+
+        val editor = sharedPref.edit()
+        editor.putBoolean("isLogin", true)
+        editor.putString("userEmail", email)
+
+        val saved = editor.commit()
+
+        android.util.Log.d(
+            "LOGIN_SAVE",
+            "Berhasil disimpan = $saved"
+        )
+        android.util.Log.d(
+            "LOGIN_SAVE",
+            "isLogin = ${sharedPref.getBoolean("isLogin", false)}"
+        )
+        android.util.Log.d(
+            "LOGIN_SAVE",
+            "userEmail = ${sharedPref.getString("userEmail", null)}"
+        )
     }
-}
+    }
+
+

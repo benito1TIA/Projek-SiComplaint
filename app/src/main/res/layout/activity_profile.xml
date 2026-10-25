@@ -1,32 +1,428 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@color/background_light">
- <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Profil" android:textSize="23sp" android:textStyle="bold" android:textColor="@color/forest_green" android:background="@color/white" android:paddingStart="20dp" android:paddingEnd="20dp" android:paddingTop="20dp" android:paddingBottom="16dp"/>
- <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:fillViewport="true"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center" android:padding="22dp" android:background="@color/forest_green">
- <ImageView android:layout_width="76dp" android:layout_height="76dp" android:src="@drawable/profile" android:contentDescription="Foto profil"/>
- <TextView android:id="@+id/tvProfileName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Benito Noel" android:textColor="@color/white" android:textSize="20sp" android:textStyle="bold" android:layout_marginTop="8dp"/>
- <TextView android:id="@+id/tvProfileEmail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="benito@gmail.com" android:textColor="@color/off_white" android:textSize="13sp"/>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+ <ScrollView
+     android:layout_width="match_parent"
+     android:layout_height="0dp"
+     android:layout_weight="1"
+     android:fillViewport="true"
+     android:overScrollMode="never">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingStart="25dp"
+      android:paddingEnd="25dp"
+      android:paddingBottom="20dp">
+
+   <!-- HEADER NOTIFIKASI DAN PENGATURAN -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="48dp"
+       android:gravity="end|center_vertical"
+       android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/btnNotification"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="🔔"
+        android:textSize="22sp"
+        android:contentDescription="Notifikasi"
+        android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+    <TextView
+        android:id="@+id/btnSettings"
+        android:layout_width="38dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="5dp"
+        android:gravity="center"
+        android:text="⚙"
+        android:textColor="#111111"
+        android:textSize="23sp"
+        android:contentDescription="Pengaturan"
+        android:background="?android:attr/selectableItemBackgroundBorderless" />
+
+   </LinearLayout>
+
+   <!-- PROFIL PENGGUNA -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="12dp"
+       android:gravity="center_vertical"
+       android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:src="@drawable/profile"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_profile_avatar"
+        android:clipToOutline="true"
+        android:elevation="3dp"
+        android:contentDescription="Foto profil" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+     <TextView
+         android:id="@+id/tvProfileName"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Benito Noel"
+         android:textColor="#080808"
+         android:textSize="18sp"
+         android:textStyle="bold"
+         android:maxLines="1"
+         android:ellipsize="end" />
+
+     <TextView
+         android:id="@+id/tvProfileEmail"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="benitonoel@gmail.com"
+         android:textColor="#333333"
+         android:textSize="13sp"
+         android:maxLines="1"
+         android:ellipsize="end" />
+
+     <TextView
+         android:id="@+id/tvAccountStatus"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="5dp"
+         android:background="@drawable/bg_profile_active"
+         android:paddingStart="15dp"
+         android:paddingEnd="15dp"
+         android:paddingTop="5dp"
+         android:paddingBottom="5dp"
+         android:text="Warga Aktif"
+         android:textColor="#111111"
+         android:textSize="9sp"
+         android:textStyle="bold" />
+
+    </LinearLayout>
+   </LinearLayout>
+
+   <!-- STATISTIK LAPORAN -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="27dp"
+       android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="5dp"
+        android:background="#F5FAF6"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+     <TextView
+         android:id="@+id/tvTotalReports"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="12"
+         android:textColor="#111111"
+         android:textSize="14sp"
+         android:textStyle="bold" />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="4dp"
+         android:text="Laporan"
+         android:textColor="#111111"
+         android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:background="#F5FAF6"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+     <TextView
+         android:id="@+id/tvCompletedReports"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="8"
+         android:textColor="#111111"
+         android:textSize="14sp"
+         android:textStyle="bold" />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="4dp"
+         android:text="Selesai"
+         android:textColor="#111111"
+         android:textSize="10sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:background="#F5FAF6"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+     <TextView
+         android:id="@+id/tvProcessingReports"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="4"
+         android:textColor="#111111"
+         android:textSize="14sp"
+         android:textStyle="bold" />
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="4dp"
+         android:text="Diproses"
+         android:textColor="#111111"
+         android:textSize="10sp" />
+
+    </LinearLayout>
+   </LinearLayout>
+
+   <!-- MENU PROFIL -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="27dp"
+       android:orientation="vertical">
+
+    <!-- EDIT PROFILE -->
+    <LinearLayout
+        android:id="@+id/btnEditProfile"
+        style="@style/ProfileMenuRow">
+
+     <ImageView
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         android:src="@drawable/user"
+         android:scaleType="fitCenter"
+         android:contentDescription="Ikon edit profil" />
+
+     <TextView
+         style="@style/ProfileMenuText"
+         android:text="Edit profile"/>
+
+     <ImageView
+         style="@style/ProfileMenuArrow"
+         android:src="@drawable/arrow_forward_ios_24"
+         android:contentDescription="Buka edit profil" />
+
+    </LinearLayout>
+
+    <!-- RIWAYAT LAPORAN -->
+    <LinearLayout
+        android:id="@+id/btnHistory"
+        style="@style/ProfileMenuRow">
+
+     <ImageView
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         android:src="@drawable/chart"
+         android:scaleType="fitCenter"
+         android:contentDescription="Ikon riwayat laporan" />
+
+     <TextView
+         style="@style/ProfileMenuText"
+         android:text="Riwayat Laporan" />
+
+     <ImageView
+         style="@style/ProfileMenuArrow"
+         android:src="@drawable/arrow_forward_ios_24"
+         android:contentDescription="Buka riwayat laporan" />
+
+    </LinearLayout>
+
+    <!-- LAPORAN TERSIMPAN -->
+    <LinearLayout
+        android:id="@+id/btnSaved"
+        style="@style/ProfileMenuRow">
+
+     <ImageView
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         android:src="@drawable/log_file"
+         android:scaleType="fitCenter"
+         android:contentDescription="Ikon laporan tersimpan" />
+
+     <TextView
+         style="@style/ProfileMenuText"
+         android:text="Laporan Tersimpan" />
+
+     <ImageView
+         style="@style/ProfileMenuArrow"
+         android:src="@drawable/arrow_forward_ios_24"
+         android:contentDescription="Buka laporan tersimpan" />
+
+    </LinearLayout>
+
+    <!-- BANTUAN -->
+    <LinearLayout
+        android:id="@+id/btnHelp"
+        style="@style/ProfileMenuRow">
+
+     <ImageView
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         android:src="@drawable/question"
+         android:scaleType="fitCenter"
+         android:contentDescription="Ikon bantuan" />
+
+     <TextView
+         style="@style/ProfileMenuText"
+         android:text="Bantuan" />
+
+     <ImageView
+         style="@style/ProfileMenuArrow"
+         android:src="@drawable/arrow_forward_ios_24"
+         android:contentDescription="Buka bantuan" />
+
+    </LinearLayout>
+
+    <!-- TENTANG SICOMPLAINT -->
+    <LinearLayout
+        android:id="@+id/btnAbout"
+        style="@style/ProfileMenuRow">
+
+     <ImageView
+         android:layout_width="20dp"
+         android:layout_height="20dp"
+         android:src="@drawable/info"
+         android:scaleType="fitCenter"
+         android:contentDescription="Ikon tentang SiComplaint" />
+
+     <TextView
+         style="@style/ProfileMenuText"
+         android:text="Tentang SiComplaint" />
+
+     <ImageView
+         style="@style/ProfileMenuArrow"
+         android:src="@drawable/arrow_forward_ios_24"
+         android:contentDescription="Buka tentang SiComplaint" />
+
+    </LinearLayout>
+
+   </LinearLayout>
+
+   <!-- KELUAR -->
+   <LinearLayout
+       android:id="@+id/btnLogout"
+       android:layout_width="match_parent"
+       android:layout_height="38dp"
+       android:layout_marginTop="21dp"
+       android:elevation="2dp"
+       android:gravity="center_vertical"
+       android:orientation="horizontal"
+       android:paddingStart="14dp"
+       android:paddingEnd="14dp"
+       android:clickable="true"
+       android:focusable="true">
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/logout"
+        android:scaleType="fitCenter"
+        android:contentDescription="Ikon keluar"
+        android:tint="#FF3030" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:text="Keluar"
+        android:textColor="#FF3030"
+        android:textSize="14sp" />
+
+   </LinearLayout>
+
+  </LinearLayout>
+ </ScrollView>
+
+ <!-- NAVIGASI BAWAH -->
+ <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="52dp"
+     android:background="#FFFFFF"
+     android:elevation="6dp"
+     android:gravity="center_vertical"
+     android:orientation="horizontal">
+
+  <TextView
+      android:id="@+id/navBeranda"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="⌂\nBeranda"
+      android:textColor="#111111"
+      android:textSize="10sp" />
+
+  <TextView
+      android:id="@+id/navPeta"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="◎\nPeta"
+      android:textColor="#111111"
+      android:textSize="10sp" />
+
+  <TextView
+      android:id="@+id/navLaporan"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="▤\nLaporan"
+      android:textColor="#111111"
+      android:textSize="10sp" />
+
+  <TextView
+      android:id="@+id/navProfil"
+      android:layout_width="0dp"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="♙\nProfil"
+      android:textColor="#218451"
+      android:textStyle="bold"
+      android:textSize="10sp" />
+
  </LinearLayout>
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="14dp" android:layout_marginBottom="14dp">
- <TextView android:layout_width="0dp" android:layout_height="72dp" android:layout_weight="1" android:gravity="center" android:text="12
-Laporan" android:textStyle="bold" android:textColor="@color/forest_green" android:background="@color/white"/>
- <TextView android:layout_width="0dp" android:layout_height="72dp" android:layout_weight="1" android:gravity="center" android:text="8
-Selesai" android:textStyle="bold" android:textColor="@color/forest_green" android:background="@color/white"/>
- <TextView android:layout_width="0dp" android:layout_height="72dp" android:layout_weight="1" android:gravity="center" android:text="4
-Diproses" android:textStyle="bold" android:textColor="@color/forest_green" android:background="@color/white"/>
- </LinearLayout><TextView android:id="@+id/btnEditProfile" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="♙   Edit profil                         ›" android:textColor="@color/text_dark" android:textSize="15sp" android:background="@color/white" android:padding="16dp" android:layout_marginBottom="10dp"/>
-<TextView android:id="@+id/btnHistory" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="▤   Riwayat laporan                  ›" android:textColor="@color/text_dark" android:textSize="15sp" android:background="@color/white" android:padding="16dp" android:layout_marginBottom="10dp"/>
-<TextView android:id="@+id/btnSaved" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="▣   Laporan tersimpan              ›" android:textColor="@color/text_dark" android:textSize="15sp" android:background="@color/white" android:padding="16dp" android:layout_marginBottom="10dp"/>
-<TextView android:id="@+id/btnHelp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ⓘ   Bantuan                              ›" android:textColor="@color/text_dark" android:textSize="15sp" android:background="@color/white" android:padding="16dp" android:layout_marginBottom="10dp"/>
-<TextView android:id="@+id/btnAbout" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ⓘ   Tentang SiComplaint           ›" android:textColor="@color/text_dark" android:textSize="15sp" android:background="@color/white" android:padding="16dp" android:layout_marginBottom="10dp"/>
-<Button android:id="@+id/btnLogout" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Keluar" android:textColor="@color/dark_red" android:backgroundTint="@color/white"/></LinearLayout></ScrollView>
- <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:background="@color/white" android:elevation="5dp" android:paddingTop="8dp" android:paddingBottom="8dp">
-  <TextView android:id="@+id/navBeranda" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="⌂
-Beranda" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
-  <TextView android:id="@+id/navPeta" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="◎
-Peta" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
-  <TextView android:id="@+id/navLaporan" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="▤
-Laporan" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
-  <TextView android:id="@+id/navProfil" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="♙
-Profil" android:textColor="@color/nav_inactive" android:textSize="12sp" android:padding="4dp"/>
- </LinearLayout>
+
 </LinearLayout>

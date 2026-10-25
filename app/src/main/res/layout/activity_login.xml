@@ -1,242 +1,339 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pine_green"
-    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:fillViewport="true"
+    android:overScrollMode="never"
     tools:context=".LoginActivity">
 
-    <!-- Top Green Area with Logo -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingTop="40dp"
-        android:paddingBottom="20dp">
+        android:paddingBottom="24dp">
 
-        <!-- Logo Box -->
+        <!-- HEADER HIJAU -->
         <androidx.cardview.widget.CardView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            app:cardBackgroundColor="@color/forest_green">
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:layout_marginStart="31dp"
+            android:layout_marginTop="62dp"
+            android:layout_marginEnd="21dp"
+            app:cardBackgroundColor="#218451"
+            app:cardCornerRadius="21dp"
+            app:cardElevation="0dp">
 
-            <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_sicomplaint_logo"
-                android:contentDescription="Logo SiComplaint" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="17dp">
+
+                <!-- KOTAK LOGO -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="74dp"
+                    android:layout_height="74dp"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="21dp"
+                    android:src="@drawable/eco_emblem1"
+                    app:cardElevation="0dp">
+
+                    <ImageView
+                        android:id="@+id/imgLogo"
+                        android:layout_width="54dp"
+                        android:layout_height="54dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="Logo SiComplaint"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/eco_emblem1" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- NAMA APLIKASI DAN TAGLINE -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical"
+                    android:gravity="end">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="167dp"
+                        android:layout_height="40dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitEnd"
+                        app:srcCompat="@drawable/sicomplaint1" />
+
+                    <TextView
+                        android:layout_width="162dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="start"
+                        android:lineSpacingExtra="1dp"
+                        android:text="Laporkan kerusakan fasilitas umum di sekitar Anda"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
-        <!-- App Name -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="14dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Si"
-                android:textColor="#FFFFFF"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-medium" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Complaint"
-                android:textColor="#FFB703"
-                android:textSize="28sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif-medium" />
-        </LinearLayout>
-
-        <!-- Tagline -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Laporkan kerusakan fasilitas\numum di sekitar Anda."
-            android:textColor="#D4EDE1"
-            android:textSize="13sp"
-            android:gravity="center" />
-    </LinearLayout>
-
-    <!-- White Card Bottom Sheet -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/white">
-
+        <!-- FORM LOGIN -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp">
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="59dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="vertical">
 
-            <!-- Email Field -->
+            <!-- EMAIL -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/bg_edittext"
+                android:layout_height="47dp"
+                android:layout_marginBottom="6dp"
+                android:background="#D1D5DB"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingHorizontal="14dp"
-                android:layout_marginBottom="12dp">
+                android:paddingStart="14dp"
+                android:paddingEnd="16dp">
 
+                <!-- Ikon email -->
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_google"
-                    android:contentDescription="Email icon"
-                    android:layout_marginEnd="8dp" />
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="Ikon email"
+                    android:src="@drawable/gmail" />
 
                 <EditText
                     android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@null"
-                    android:hint="Email"
+                    android:layout_weight="1"
+                    android:background="#D1D5DB"
+                    android:hint="Email..."
                     android:inputType="textEmailAddress"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_dark"
-                    android:textColorHint="@color/medium_gray" />
+                    android:singleLine="true"
+                    android:autofillHints="emailAddress"
+                    android:textColor="#333333"
+                    android:textColorHint="#858585"
+                    android:radius="8dp"
+                    android:textSize="12sp"
+                    android:padding="0dp" />
+
             </LinearLayout>
 
-            <!-- Password Field -->
+            <!-- PASSWORD -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/bg_edittext"
+                android:layout_height="47dp"
+                android:layout_marginBottom="9dp"
+                android:background="#D1D5DB"
+
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingHorizontal="14dp"
-                android:layout_marginBottom="20dp">
+                android:paddingStart="14dp"
+                android:paddingEnd="16dp">
 
+                <!-- Ikon password -->
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_pin"
-                    android:contentDescription="Password icon"
-                    android:layout_marginEnd="8dp" />
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="Ikon password"
+                    android:src="@drawable/lock"
+                    android:scaleType="fitCenter" />
 
                 <EditText
                     android:id="@+id/etPassword"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@null"
-                    android:hint="Password…"
+                    android:layout_weight="1"
+                    android:background="#D1D5DB"
+                    android:hint="Password..."
                     android:inputType="textPassword"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_dark"
-                    android:textColorHint="@color/medium_gray" />
+                    android:singleLine="true"
+                    android:autofillHints="password"
+                    android:textColor="#333333"
+                    android:textColorHint="#858585"
+                    android:textSize="12sp"
+                    android:padding="0dp" />
+
             </LinearLayout>
 
-            <!-- Login Button -->
+            <!-- TOMBOL MASUK -->
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:background="@drawable/bg_btn_primary"
+                android:layout_height="47dp"
+                android:background="#D1D5DB"
+                android:elevation="0dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:stateListAnimator="@null"
+                android:padding="0dp"
                 android:text="Masuk"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp" />
-
-            <!-- Divider OR -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:layout_marginBottom="16dp">
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="@color/light_gray" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="12dp"
-                    android:text="Atau"
-                    android:textColor="@color/medium_gray"
-                    android:textSize="13sp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="@color/light_gray" />
-            </LinearLayout>
-
-            <!-- Google Login Button -->
-            <Button
-                android:id="@+id/btnGoogle"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/bg_btn_outline"
-                android:drawableStart="@drawable/ic_google"
-                android:drawablePadding="10dp"
-                android:text="Masuk dengan Google"
-                android:textColor="@color/text_dark"
-                android:textSize="14sp"
-                android:layout_marginBottom="10dp" />
-
-            <!-- Apple Login Button -->
-            <Button
-                android:id="@+id/btnApple"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/bg_btn_outline"
-                android:drawableStart="@drawable/ic_apple"
-                android:drawablePadding="10dp"
-                android:text="@string/btn_apple"
-                android:textColor="@color/text_dark"
-                android:textSize="14sp"
-                android:layout_marginBottom="16dp" />
-
-            <!-- Register Link -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:paddingBottom="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tidak Punya Akun? "
-                    android:textColor="@color/medium_gray"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/tvDaftar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Daftar Sekarang"
-                    android:textColor="@color/pine_green"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+        <!-- PEMISAH ATAU -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#D5D9DE" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="23dp"
+                android:paddingEnd="23dp"
+                android:text="Atau"
+                android:textColor="#929292"
+                android:textSize="11sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#D5D9DE" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="25dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="#D1D5DB"
+            android:paddingHorizontal="12dp">
+
+            <ImageView
+                android:id="@+id/ivGoogle"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/google"
+                android:scaleType="fitCenter"
+                android:contentDescription="Logo Google" />
+
+            <Button
+                android:id="@+id/btnGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@null"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="0dp"
+                android:stateListAnimator="@null"
+                android:text="Masuk dengan Google"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- TOMBOL APPLE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="25dp"
+            android:background="#D1D5DB"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp">
+
+            <ImageView
+                android:id="@+id/ivApple"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/apple_logo"
+                android:scaleType="fitCenter"
+                android:contentDescription="Logo Apple" />
+
+            <Button
+                android:id="@+id/btnApple"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@null"
+                android:elevation="0dp"
+                android:gravity="center"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="0dp"
+                android:stateListAnimator="@null"
+                android:text="Masuk dengan Apple"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="138dp"
+            android:layout_marginTop="23dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tidak Punya Akun?"
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvDaftar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:padding="2dp"
+                android:text="Daftar Sekarang"
+                android:textColor="#218451"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>

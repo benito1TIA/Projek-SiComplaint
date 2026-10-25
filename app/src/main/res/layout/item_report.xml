@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_report_rounded">
+
+    <TextView
+        android:id="@+id/tvReportTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jalan Rusak di Jalan Sudirman"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/pine_green" />
+
+    <TextView
+        android:id="@+id/tvReportCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Infrastruktur"
+        android:textSize="13sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/tvReportDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="24 Oktober 2026"
+        android:textSize="12sp"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/tvReportStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Menunggu"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:padding="6dp"
+        android:background="@drawable/bg_status_green" />
+
+</LinearLayout>

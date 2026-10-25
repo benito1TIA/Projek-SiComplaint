@@ -1,11 +1,14 @@
+
 package com.example.benito_tia
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.TextView
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.benito_tia.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,143 +21,134 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Ambil nama pengguna dari SharedPreferences
-        val sharedPref = getSharedPreferences("SiComplaintPrefs", Context.MODE_PRIVATE)
-        val userEmail = sharedPref.getString("userEmail", "Pengguna")
-        val displayName = userEmail?.substringBefore("@") ?: "Pengguna"
-        val formattedName = displayName.replaceFirstChar { it.uppercase() }
-        binding.tvUserWelcome.text = formattedName
-
-        // Tombol Buat Laporan
-        binding.btnBuatLaporan.setOnClickListener {
-            startActivity(Intent(this, CreateReportActivity::class.java))
+        // Tampilkan Beranda saat aplikasi pertama kali dibuka
+        if (savedInstanceState == null) {
+            loadFragment(Home())
+            setActiveMenu("beranda")
         }
 
-
-        // Beranda
+        // Navigasi bawah
         binding.navBeranda.setOnClickListener {
-            // Tetap di MainActivity
+            loadFragment(Home())
+            setActiveMenu("beranda")
         }
 
-// Peta
         binding.navPeta.setOnClickListener {
-            startActivity(Intent(this, MapActivity::class.java))
+            loadFragment(Map())
+            setActiveMenu("peta")
         }
 
-// Laporan
         binding.navLaporan.setOnClickListener {
-            startActivity(Intent(this, ReportsActivity::class.java))
+            loadFragment(Reports())
+            setActiveMenu("laporan")
         }
 
-// Profil
         binding.navProfil.setOnClickListener {
-            startActivity(Intent(this, ProfileActivity::class.java))
-        }
-
-// Foto profil atau sapaan pengguna
-        binding.tvUserWelcome.setOnClickListener {
-            startActivity(Intent(this, ProfileActivity::class.java))
-        }
-
-// Notifikasi
-        binding.imgNotification.setOnClickListener {
-            startActivity(Intent(this, ReportsActivity::class.java))
-        }
-
-
-        // Kategori
-        binding.catJalanRusak.setOnClickListener {
-            Toast.makeText(this, "Kategori: Jalan Rusak", Toast.LENGTH_SHORT).show()
-        }
-        binding.catLampuJalan.setOnClickListener {
-            Toast.makeText(this, "Kategori: Lampu Jalan", Toast.LENGTH_SHORT).show()
-        }
-        binding.catDrainase.setOnClickListener {
-            Toast.makeText(this, "Kategori: Drainase", Toast.LENGTH_SHORT).show()
-        }
-        binding.catFasilitas.setOnClickListener {
-            Toast.makeText(this, "Kategori: Fasilitas Taman", Toast.LENGTH_SHORT).show()
-        }
-        binding.catSampah.setOnClickListener {
-            Toast.makeText(this, "Kategori: Tempat Sampah", Toast.LENGTH_SHORT).show()
-        }
-        binding.catLainnya.setOnClickListener {
-            Toast.makeText(this, "Kategori: Lainnya", Toast.LENGTH_SHORT).show()
-        }
-
-        // Laporan cards
-        binding.cardComplaint1.setOnClickListener {
-            Toast.makeText(this, "Laporan: Jalan berlubang di Jl. Melati", Toast.LENGTH_SHORT).show()
-        }
-        binding.cardComplaint2.setOnClickListener {
-            Toast.makeText(this, "Laporan: Lampu jalan mati di Jl. Sudirman", Toast.LENGTH_SHORT).show()
-        }
-
-        // Lihat Semua
-        binding.tvLihatSemuaKategori.setOnClickListener {
-            Toast.makeText(this, "Lihat semua kategori", Toast.LENGTH_SHORT).show()
-        }
-        binding.tvLihatSemuaLaporan.setOnClickListener {
-            startActivity(Intent(this, ReportsActivity::class.java))
-        }
-
-        // Bottom Navigation
-        binding.navBeranda.setOnClickListener {
-            // Sudah di halaman Beranda
-            Toast.makeText(this, "Beranda", Toast.LENGTH_SHORT).show()
-        }
-        binding.navPeta.setOnClickListener {
-            startActivity(Intent(this, MapActivity::class.java))
-        }
-        binding.navLaporan.setOnClickListener {
-            startActivity(Intent(this, ReportsActivity::class.java))
-        }
-        binding.navProfil.setOnClickListener {
-            startActivity(Intent(this, ProfileActivity::class.java))
-        }
-
-        // Notifikasi
-        binding.imgNotification.setOnClickListener {
-            Toast.makeText(this, "Notifikasi", Toast.LENGTH_SHORT).show()
+            loadFragment(Profile())
+            setActiveMenu("profil")
         }
     }
 
-    private fun showProfileOptions() {
-        val options = arrayOf("Lihat Profil", "Keluar")
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Profil")
-        builder.setItems(options) { _, which ->
-            when (which) {
-                0 -> Toast.makeText(this, "Halaman Profil", Toast.LENGTH_SHORT).show()
-                1 -> showLogoutDialog()
-            }
-        }
-        builder.show()
+    // Mengganti halaman di dalam fragmentContainer
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
     }
 
-    private fun showLogoutDialog() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Keluar?")
-        builder.setMessage("Apakah Anda yakin ingin keluar dari aplikasi SiComplaint?")
-        builder.setPositiveButton("Ya") { dialog, _ ->
-            dialog.dismiss()
+    // Mengubah warna menu navigasi yang aktif
+    private fun setActiveMenu(menu: String) {
+        val menus = listOf(
+            Triple(
+                binding.navBeranda,
+                binding.iconBeranda,
+                binding.textBeranda
+            ) to "beranda",
 
-            // Hapus status login dari SharedPreferences
-            val sharedPref = getSharedPreferences("SiComplaintPrefs", Context.MODE_PRIVATE)
-            with(sharedPref.edit()) {
-                putBoolean("isLogin", false)
-                remove("userEmail")
-                apply()
+            Triple(
+                binding.navPeta,
+                binding.iconPeta,
+                binding.textPeta
+            ) to "peta",
+
+            Triple(
+                binding.navLaporan,
+                binding.iconLaporan,
+                binding.textLaporan
+            ) to "laporan",
+
+            Triple(
+                binding.navProfil,
+                binding.iconProfil,
+                binding.textProfil
+            ) to "profil"
+        )
+
+        menus.forEach { (views, name) ->
+            val (_, icon, text) = views
+            val active = name == menu
+
+            val color = getColor(
+                if (active) R.color.pine_green
+                else R.color.medium_gray
+            )
+
+            icon.setColorFilter(color)
+            text.setTextColor(color)
+
+            text.setTypeface(
+                null,
+                if (active) android.graphics.Typeface.BOLD
+                else android.graphics.Typeface.NORMAL
+            )
+        }
+    }
+
+    // Dialog konfirmasi logout
+    fun showLogoutDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Keluar?")
+            .setMessage(
+                "Apakah Anda yakin ingin keluar dari aplikasi SiComplaint?"
+            )
+            .setPositiveButton("Ya") { dialog, _ ->
+                dialog.dismiss()
+
+                val sharedPref = getSharedPreferences(
+                    "SiComplaintPrefs",
+                    Context.MODE_PRIVATE
+                )
+
+                with(sharedPref.edit()) {
+                    putBoolean("isLogin", false)
+                    remove("userEmail")
+                    apply()
+                }
+
+                val intent = Intent(
+                    this,
+                    LoginActivity::class.java
+                ).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or
+                            Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+
+                startActivity(intent)
+                finish()
             }
+            .setNegativeButton("Tidak") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
+    }
 
-            val intent = Intent(this, LoginActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-            finish()
-        }
-        builder.setNegativeButton("Tidak") { dialog, _ ->
-            dialog.dismiss()
-        }
-        builder.create().show()
+    fun openHome() {
+        loadFragment(Home())
+        setActiveMenu("beranda")
+    }
+
+    fun openMap() {
+        loadFragment(Map())
+        setActiveMenu("peta")
     }
 }
