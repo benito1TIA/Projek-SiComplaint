@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.material.chip.ChipGroup
 
 class Home : Fragment() {
 
@@ -15,7 +17,11 @@ class Home : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(
+            R.layout.fragment_home,
+            container,
+            false
+        )
     }
 
     override fun onViewCreated(
@@ -47,5 +53,29 @@ class Home : Fragment() {
                     .addToBackStack(null)
                     .commit()
             }
+
+        // Chip Group Kategori
+        val chipGroup = view.findViewById<ChipGroup>(
+            R.id.chipGroupKategori
+        )
+
+        chipGroup.setOnCheckedStateChangeListener { group, checkedIds ->
+
+            if (checkedIds.isNotEmpty()) {
+                val selectedChip = group.findViewById<View>(
+                    checkedIds[0]
+                )
+
+                val selectedCategory =
+                    (selectedChip as? com.google.android.material.chip.Chip)
+                        ?.text
+
+                Toast.makeText(
+                    requireContext(),
+                    "Kategori: $selectedCategory",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 }

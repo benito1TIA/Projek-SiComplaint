@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/tvSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:textColor="#218451"
+        android:textSize="15sp"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/imgTutorial"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:src="@drawable/sicomplaintlogo"
+        android:scaleType="fitCenter"
+        android:contentDescription="Ilustrasi tutorial SiComplaint"
+        app:layout_constraintTop_toBottomOf="@id/tvSkip"
+        app:layout_constraintBottom_toTopOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.4"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="28dp"
+        android:text="Selamat Datang di SiComplaint"
+        android:textColor="#1F2937"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/tvDescription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        android:text="Aplikasi untuk membantu masyarakat melaporkan kerusakan fasilitas umum dengan mudah."
+        android:textColor="#6B7280"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/layoutIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@id/btnNext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="24dp"
+            android:layout_height="8dp"
+            android:background="#218451"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="8dp"
+            android:background="#D1D5DB"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="8dp"
+            android:background="#D1D5DB"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="36dp"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#218451"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

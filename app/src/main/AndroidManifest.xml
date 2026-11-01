@@ -19,9 +19,14 @@
             android:theme="@style/Theme.Benito_TIA.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TutorialActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
         <!-- Login Activity -->
         <activity
@@ -30,12 +35,23 @@
             android:windowSoftInputMode="adjustResize" />
 
         <!-- Main / Beranda Activity -->
-        <activity android:name=".MainActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ProfileActivity" android:exported="false" />
-        <activity android:name=".CreateReportActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ReportsActivity" android:exported="false" />
-        <activity android:name=".MapActivity" android:exported="false" />
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateReportActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ReportsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

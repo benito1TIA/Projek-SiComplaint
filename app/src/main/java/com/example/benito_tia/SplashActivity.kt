@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
     private val splashHandler = Handler(Looper.getMainLooper())
 
     private val navigateRunnable = Runnable {
-        checkLoginStatus()
+        checkAppStatus()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,28 +28,29 @@ class SplashActivity : AppCompatActivity() {
         splashHandler.postDelayed(navigateRunnable, 2500)
     }
 
-    private fun checkLoginStatus() {
+    private fun checkAppStatus() {
         val sharedPref = getSharedPreferences(
             "SiComplaintPrefs",
             MODE_PRIVATE
         )
 
         val isLogin = sharedPref.getBoolean("isLogin", false)
+        val hasSeenTutorial = sharedPref.getBoolean(
+            "hasSeenTutorial",
+            false
+        )
 
-        val intent = if (isLogin) {
-            // Pengguna sudah login
-            Intent(this, MainActivity::class.java)
-        } else {
-            // Pengguna belum login
-            Intent(this, LoginActivity::class.java)
+        val destination = when {
+            !hasSeenTutorial -> TutorialActivity::class.java
+            isLogin -> MainActivity::class.java
+            else -> LoginActivity::class.java
         }
 
-        startActivity(intent)
+        startActivity(Intent(this, destination))
         finish()
     }
 
     override fun onDestroy() {
-        // Mencegah navigasi tertunda jika Activity dihancurkan
         splashHandler.removeCallbacks(navigateRunnable)
         super.onDestroy()
     }
