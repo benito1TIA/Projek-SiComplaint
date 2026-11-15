@@ -5,43 +5,52 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:layout_marginBottom="8dp"
-    android:background="@drawable/bg_report_rounded">
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_report_rounded"
+    android:elevation="2dp">
 
+    <!-- JUDUL LAPORAN -->
     <TextView
         android:id="@+id/tvReportTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Jalan Rusak di Jalan Sudirman"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:textStyle="bold"
-        android:textColor="@color/pine_green" />
+        android:textColor="#218451" />
 
+    <!-- KATEGORI -->
     <TextView
         android:id="@+id/tvReportCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Infrastruktur"
+        android:text="Kategori: Infrastruktur"
         android:textSize="13sp"
-        android:layout_marginTop="4dp" />
+        android:textColor="#64748B"
+        android:layout_marginTop="8dp" />
 
+    <!-- TANGGAL -->
     <TextView
         android:id="@+id/tvReportDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="24 Oktober 2026"
+        android:text="Tanggal: 24 Oktober 2026"
         android:textSize="12sp"
-        android:layout_marginTop="4dp" />
+        android:textColor="#94A3B8"
+        android:layout_marginTop="5dp" />
 
+    <!-- STATUS -->
     <TextView
         android:id="@+id/tvReportStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Menunggu"
-        android:textSize="12sp"
+        android:textSize="11sp"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
-        android:padding="6dp"
-        android:background="@drawable/bg_status_green" />
+        android:textColor="#218451"
+        android:layout_marginTop="12dp"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        android:background="@drawable/bg_status_pill" />
 
 </LinearLayout>
